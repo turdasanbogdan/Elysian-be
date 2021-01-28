@@ -5,7 +5,7 @@ import java.util.StringJoiner;
 
 @Entity
 @Table(name="drugs")
-public class Drugs {
+public class Drug {
 
     @Id
     @GeneratedValue()
@@ -18,11 +18,11 @@ public class Drugs {
     @Column(name = "type")
     private String type;
 
-   public Drugs() {
+   public Drug() {
 
    }
 
-   public Drugs(String name, String type){
+   public Drug(String name, String type){
        this.name = name;
        this.type = type;
    }

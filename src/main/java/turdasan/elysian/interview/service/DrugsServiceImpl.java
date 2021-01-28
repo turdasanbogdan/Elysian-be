@@ -2,33 +2,35 @@ package turdasan.elysian.interview.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import turdasan.elysian.interview.dao.DrugsDao;
-import turdasan.elysian.interview.entity.Drugs;
+//import turdasan.elysian.interview.dao.DrugsDao;
+import turdasan.elysian.interview.entity.Drug;
+import turdasan.elysian.interview.repository.DrugsRepository;
 
 import java.util.List;
 
 @Service
 public class DrugsServiceImpl implements DrugsService {
 
-    private DrugsDao drugsDao;
-
     @Autowired
-    public DrugsServiceImpl(DrugsDao drugsDao){
-        this.drugsDao = drugsDao;
+    private DrugsRepository drugsRepo;
+
+
+//    public DrugsServiceImpl(DrugsRepository drugsRepo){
+//        this.drugsRepo = drugsRepo;
+//    }
+
+    @Override
+    public List<Drug> findAll() {
+        return drugsRepo.findAll();
     }
 
     @Override
-    public List<Drugs> getAll() {
-        return drugsDao.getAll();
+    public Drug findById(int id) {
+        return drugsRepo.findById(id);
     }
 
     @Override
-    public Drugs findByID(int id) {
-        return drugsDao.findByID(id);
-    }
-
-    @Override
-    public List<Drugs> findByName(String name) {
-        return drugsDao.findByName(name);
+    public Drug findByName(String name) {
+        return drugsRepo.findByName(name);
     }
 }
