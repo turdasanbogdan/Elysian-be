@@ -1,8 +1,0 @@
-DROP TABLE IF EXISTS drugs CASCADE;
-CREATE TABLE drugs(
-	id SERIAL,
-	name TEXT,
-	type TEXT,
-
-	PRIMARY KEY(id)
-);
