@@ -1,23 +1,23 @@
 version: "3.1"
 services:
 
-  springbootapp:
-    image: springbootapp:latest
-    container_name: springbootapp
-    expose:
-        - 8080
-    ports:
-        - 8080:8080
-    restart: unless-stopped
-    depends_on:
-        - postgres
-#    links:
+#  springbootapp:
+#    image: springbootapp:latest
+#    container_name: springbootapp
+#    expose:
+#        - 8080
+#    ports:
+#        - 8080:8080
+#    restart: unless-stopped
+#    depends_on:
 #        - postgres
-    environment:
-        - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/elysian
-        - SPRING_DATASOURCE_USERNAME=postgres
-        - SPRING_DATASOURCE_PASSWORD=admin
-        - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+##    links:
+##        - postgres
+#    environment:
+#        - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/elysian
+#        - SPRING_DATASOURCE_USERNAME=postgres
+#        - SPRING_DATASOURCE_PASSWORD=admin
+#        - SPRING_JPA_HIBERNATE_DDL_AUTO=update
 
   postgres:
     image: postgres:latest
