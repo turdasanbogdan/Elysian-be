@@ -9,13 +9,12 @@ public class Drug {
 
     @Id
     @GeneratedValue()
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
+    @Column
     private String name;
 
-    @Column(name = "type")
+    @Column
     private String type;
 
    public Drug() {
