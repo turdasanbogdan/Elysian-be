@@ -1,13 +1,18 @@
 package turdasan.elysian.interview.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import turdasan.elysian.interview.entity.Drug;
 import turdasan.elysian.interview.service.DrugsService;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/drugs")
 public class DrugsRestController {
 
     private DrugsService drugsService;
@@ -17,12 +22,12 @@ public class DrugsRestController {
         this.drugsService = drugsService;
     }
 
-    @GetMapping("/drugs")
-    public List<Drug>  getAll(){
+    @GetMapping("/")
+    public List<Drug>  findAll(){
         return drugsService.findAll();
     }
 
-    @GetMapping("/drugs/{id}")
+    @GetMapping("/id/{id}")
     public Drug findByID(@PathVariable int id){
         Drug drug = drugsService.findById(id);
 
@@ -33,7 +38,7 @@ public class DrugsRestController {
         return drug;
     }
 
-    @GetMapping("/drugs/{name}")
+    @GetMapping("/name/{name}")
     public Drug findByName(@PathVariable String name){
         Drug drug = drugsService.findByName(name);
 
