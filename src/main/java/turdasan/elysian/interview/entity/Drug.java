@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.StringJoiner;
 
 @Entity
-@Table(name="drugs")
+@Table(name = "drugs")
 public class Drug {
 
     @Id

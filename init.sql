@@ -1,13 +1,13 @@
 -- DROP TABLE IF EXISTS stocks CASCADE;
 -- DROP TABLE IF EXISTS drugs CASCADE;
 -- DROP TABLE IF EXISTS pharmacies CASCADE;
--- CREATE TABLE drugs(
---
--- 	drug_id int PRIMARY KEY,
--- 	name varchar(255),
--- 	type varchar(255)
---
--- );
+CREATE TABLE drugs(
+
+	drug_id int PRIMARY KEY,
+	name varchar(255),
+	type varchar(255)
+
+);
 --
 -- CREATE TABLE pharmacies(
 --
@@ -45,6 +45,15 @@ INSERT INTO pharmacies values (5, 'Sicofarm S.R.L', 'Mihail Kogalniceanu', 'Iasi
 INSERT INTO pharmacies values (6, 'Top-Farm', 'Alexandru Ioan Cuza', 'Iasi', '0266338113');
 INSERT INTO pharmacies values (7, 'InfoFarm', 'Strada Garii', 'Cluj', '0254241505');
 INSERT INTO pharmacies values (8, 'GeroFarm', 'Strada Garii', 'Cluj', '0372409406');
+
+INSERT INTO pharmacies values (1, 'Strada Garii','Bucuresti','Catena', '0767778891');
+INSERT INTO pharmacies values (2, 'Bulevardul unirii','Bucuresti','HelpNet',  '0372409405');
+INSERT INTO pharmacies values (3,  'Aleea Stundetilor', 'Timisoara','Medimfarm', '0256202171');
+INSERT INTO pharmacies values (4,  'Gheorghe Doja', 'Timisoara', 'Farmavet','0254251261');
+INSERT INTO pharmacies values (5, 'Mihail Kogalniceanu', 'Iasi', 'Sicofarm S.R.L', '0723135300');
+INSERT INTO pharmacies values (6,  'Alexandru Ioan Cuza', 'Iasi','Top-Farm', '0266338113');
+INSERT INTO pharmacies values (7,  'Strada Garii', 'Cluj','InfoFarm', '0254241505');
+INSERT INTO pharmacies values (8,  'Strada Garii', 'Cluj', 'GeroFarm','0372409406');
 
 INSERT INTO stocks values(1, 1, 1, 100);
 INSERT INTO stocks values(2, 1, 2, 50);
