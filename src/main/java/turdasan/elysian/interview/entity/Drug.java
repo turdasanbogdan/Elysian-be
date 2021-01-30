@@ -1,7 +1,8 @@
 package turdasan.elysian.interview.entity;
 
 import javax.persistence.*;
-import java.util.StringJoiner;
+import java.util.ArrayList;
+import java.util.Set;
 
 @Entity
 @Table(name = "drugs")
@@ -17,9 +18,13 @@ public class Drug {
     @Column
     private String type;
 
-   public Drug() {
+    @OneToMany(
+            mappedBy = "drugs",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private Set<Stock> stocks;
 
-   }
+   public Drug() { }
 
    public Drug(String name, String type){
        this.name = name;
@@ -51,5 +56,23 @@ public class Drug {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Set<Stock> getStocks() {
+        return stocks;
+    }
+
+    public void setStocks(Set<Stock> stocks) {
+        this.stocks = stocks;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }
