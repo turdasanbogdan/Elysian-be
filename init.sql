@@ -1,46 +1,3 @@
--- DROP TABLE IF EXISTS stocks CASCADE;
--- DROP TABLE IF EXISTS drugs CASCADE;
--- DROP TABLE IF EXISTS pharmacies CASCADE;
-CREATE TABLE drugs(
-
-	drug_id int PRIMARY KEY,
-	name varchar(255),
-	type varchar(255)
-
-);
---
--- CREATE TABLE pharmacies(
---
---     pharmacy_id int PRIMARY KEY,
---     name varchar(255),
---     address varchar(255),
---     city varchar(255),
---     phone varchar(255)
---
--- );
---
--- CREATE TABLE stocks(
---
---     stock_id int PRIMARY KEY,
---     pharmacy_id int,
---     drug_id int,
---     quantity int
---
---
--- );
-
-
-
--- INSERT INTO pharmacies values (1, 'Catena', 'Strada Garii', 'Bucuresti', '0767778891');
--- INSERT INTO pharmacies values (2, 'HelpNet', 'Bulevardul unirii', 'Bucuresti', '0372409405');
--- INSERT INTO pharmacies values (3, 'Medimfarm', 'Aleea Stundetilor', 'Timisoara', '0256202171');
--- INSERT INTO pharmacies values (4, 'Farmavet', 'Gheorghe Doja', 'Timisoara', '0254251261');
--- INSERT INTO pharmacies values (5, 'Sicofarm S.R.L', 'Mihail Kogalniceanu', 'Iasi', '0723135300');
--- INSERT INTO pharmacies values (6, 'Top-Farm', 'Alexandru Ioan Cuza', 'Iasi', '0266338113');
--- INSERT INTO pharmacies values (7, 'InfoFarm', 'Strada Garii', 'Cluj', '0254241505');
--- INSERT INTO pharmacies values (8, 'GeroFarm', 'Strada Garii', 'Cluj', '0372409406');
-
-
 INSERT INTO drugs values (1, 'Olaflur', 'COMPRIMATE');
 INSERT INTO drugs values (2, 'Clorhexidina', 'COMPRIMATE');
 INSERT INTO drugs values (3, 'Tiamina', 'SIROP');
@@ -77,23 +34,3 @@ INSERT INTO stocks values(16, 60,2, 7);
 INSERT INTO stocks values(17, 100,1, 8);
 INSERT INTO stocks values(18, 100,2, 8);
 INSERT INTO stocks values(19,100, 3, 8);
--- INSERT INTO stocks values(100, 1, 1);
--- INSERT INTO stocks values(50, 2, 1);
--- INSERT INTO stocks values(101, 3, 2);
--- INSERT INTO stocks values( 60, 4, 2);
--- INSERT INTO stocks values(100, 5, 3);
--- INSERT INTO stocks values(200, 6, 3);
--- INSERT INTO stocks values(300, 7, 4);
--- INSERT INTO stocks values(10, 1, 4);
--- INSERT INTO stocks values(11, 2, 5);
--- INSERT INTO stocks values( 80, 3, 5);
--- INSERT INTO stocks values(350, 4, 6);
--- INSERT INTO stocks values(10, 5, 7);
--- INSERT INTO stocks values(20,6, 7);
--- INSERT INTO stocks values(20, 7, 7);
--- INSERT INTO stocks values(50, 1, 7);
--- INSERT INTO stocks values(60, 2, 7);
--- INSERT INTO stocks values(100, 1, 8);
--- INSERT INTO stocks values(100, 2, 8);
--- INSERT INTO stocks values(100, 3, 8);
-

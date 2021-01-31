@@ -14,11 +14,6 @@ public class DrugsServiceImpl implements DrugsService {
     @Autowired
     private DrugsRepository drugsRepo;
 
-
-//    public DrugsServiceImpl(DrugsRepository drugsRepo){
-//        this.drugsRepo = drugsRepo;
-//    }
-
     @Override
     public List<Drug> findAll() {
         return drugsRepo.findAll();

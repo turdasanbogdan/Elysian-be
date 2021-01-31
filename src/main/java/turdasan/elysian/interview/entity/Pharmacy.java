@@ -24,23 +24,8 @@ public class Pharmacy {
     @Column()
     private String phone;
 
-//    @OneToMany(
-//            mappedBy = "pharmacies",
-//            fetch = FetchType.LAZY,
-//            orphanRemoval = true)
-//    private Set<Stock> stocks;
-
     @OneToMany(mappedBy = "pharmacies", fetch = FetchType.LAZY)
     private Set<Stock> stoks = new HashSet<Stock>();
-
-
-//    public Set<Stock> getStoks() {
-//        return stoks;
-//    }
-//
-//    public void setStoks(Set<Stock> stoks) {
-//        this.stoks = stoks;
-//    }
 
     public Pharmacy(){}
 

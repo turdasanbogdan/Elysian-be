@@ -19,32 +19,17 @@ public class Drug {
     @Column
     private String type;
 
-//    @OneToMany(
-//            mappedBy = "drugs",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true)
+    @OneToMany(mappedBy = "drugs")
+    private Set<Stock> stocks = new HashSet<Stock>();
 
-   @OneToMany(mappedBy = "drugs")
-   private Set<Stock> stocks = new HashSet<Stock>();
+    public Drug() { }
 
-   public Drug() { }
-
-   public Drug(String name, String type){
+    public Drug(String name, String type){
        this.name = name;
        this.type = type;
-   }
+    }
 
    //getters and setters
-
-
-
-//    public Set<Stock> getStocks() {
-//        return stocks;
-//    }
-//
-//    public void setStocks(Set<Stock> stocks) {
-//        this.stocks = stocks;
-//    }
 
     public int getId() {
         return id;

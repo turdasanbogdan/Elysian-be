@@ -50,20 +50,7 @@ public class StocksRestController {
     public int findAllDrugs(@PathVariable String city_name, @PathVariable String drug_name ){
 
         List<Stock> stocks = stocksService.findAll();
-//        stocks.stream().forEach(
-//                s -> {
-//                    if(s.getPharmacies().getCity().equals(city_name){
-//                       if(s.getDrugs().getName().equals(drug_name)){
-//                           total = total + s.getQuantity();
-//                       }
-//                    }
-//                }
-//        );
-//
-//        if(pharmas.size() == 0){
-//            throw new RuntimeException("no pharmas have drug " + drug_name);
-//
-//        }
+
     int total = stocks.stream()
                     .filter(s -> s.getPharmacies().getCity().equals(city_name))
                     .filter(s -> s.getDrugs().getName().equals(drug_name))
