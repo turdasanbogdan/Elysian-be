@@ -2,52 +2,24 @@ package turdasan.elysian.interview.entity;
 
 import javax.persistence.*;
 
-@Entity()
+@Entity
 @Table(name = "stocks")
 public class Stock {
-    @EmbeddedId
-    private StockKey id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("pharmacyId")
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pharmacy_id")
     private Pharmacy pharmacies;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @MapsId("drugId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "drug_id")
     private Drug drugs;
 
     @Column(name = "quantity")
     private int quantity;
-
-    public Stock(Pharmacy p , Drug d){
-        this.pharmacies = p;
-        this.drugs = d;
-        this.id = new StockKey(p.getId(), d.getId());
-    }
-
-    public StockKey getId() {
-        return id;
-    }
-
-    public void setId(StockKey id) {
-        this.id = id;
-    }
-
-    public Pharmacy getPharmacy() {
-        return pharmacies;
-    }
-
-    public void setPharmacy(Pharmacy pharmacy) {
-        this.pharmacies = pharmacy;
-    }
-
-    public Drug getDrug() {
-        return drugs;
-    }
-
-    public void setDrug(Drug drugs) {
-        this.drugs = drugs;
-    }
 
     public int getQuantity() {
         return quantity;
@@ -55,6 +27,32 @@ public class Stock {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public Pharmacy getPharmacies() {
+        return pharmacies;
+    }
+
+    public void setPharmacies(Pharmacy pharmacies) {
+        this.pharmacies = pharmacies;
+    }
+
+
+    public Drug getDrugs(){
+        return drugs;
+    }
+
+    public void setDrugs(Drug drugs) {
+        this.drugs = drugs;
     }
 
     @Override

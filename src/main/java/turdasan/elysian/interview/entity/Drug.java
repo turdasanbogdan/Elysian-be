@@ -2,6 +2,7 @@ package turdasan.elysian.interview.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,11 +19,13 @@ public class Drug {
     @Column
     private String type;
 
-    @OneToMany(
-            mappedBy = "drugs",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private Set<Stock> stocks;
+//    @OneToMany(
+//            mappedBy = "drugs",
+//            cascade = CascadeType.ALL,
+//            orphanRemoval = true)
+
+   @OneToMany(mappedBy = "drugs")
+   private Set<Stock> stocks = new HashSet<Stock>();
 
    public Drug() { }
 
@@ -33,6 +36,15 @@ public class Drug {
 
    //getters and setters
 
+
+
+//    public Set<Stock> getStocks() {
+//        return stocks;
+//    }
+//
+//    public void setStocks(Set<Stock> stocks) {
+//        this.stocks = stocks;
+//    }
 
     public int getId() {
         return id;
@@ -56,14 +68,6 @@ public class Drug {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Set<Stock> getStocks() {
-        return stocks;
-    }
-
-    public void setStocks(Set<Stock> stocks) {
-        this.stocks = stocks;
     }
 
     @Override
