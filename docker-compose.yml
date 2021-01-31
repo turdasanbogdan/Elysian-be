@@ -11,8 +11,8 @@ services:
 #    restart: unless-stopped
 #    depends_on:
 #        - postgres
-##    links:
-##        - postgres
+#    links:
+#        - postgres
 #    environment:
 #        - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/elysian
 #        - SPRING_DATASOURCE_USERNAME=postgres

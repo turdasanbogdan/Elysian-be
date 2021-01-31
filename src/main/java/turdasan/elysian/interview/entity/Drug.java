@@ -1,10 +1,12 @@
 package turdasan.elysian.interview.entity;
 
 import javax.persistence.*;
-import java.util.StringJoiner;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name="drugs")
+@Table(name = "drugs")
 public class Drug {
 
     @Id
@@ -17,17 +19,17 @@ public class Drug {
     @Column
     private String type;
 
-   public Drug() {
+    @OneToMany(mappedBy = "drugs")
+    private Set<Stock> stocks = new HashSet<Stock>();
 
-   }
+    public Drug() { }
 
-   public Drug(String name, String type){
+    public Drug(String name, String type){
        this.name = name;
        this.type = type;
-   }
+    }
 
    //getters and setters
-
 
     public int getId() {
         return id;
@@ -51,5 +53,15 @@ public class Drug {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

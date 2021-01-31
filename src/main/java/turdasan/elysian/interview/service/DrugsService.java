@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DrugsService {
 
-    public List<Drug> findAll();
-    public Drug findById(int id);
-    public Drug findByName(String name);
+    List<Drug> findAll();
+    Drug findById(int id);
+    Drug findByName(String name);
 
 
 }
