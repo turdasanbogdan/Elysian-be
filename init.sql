@@ -1,3 +1,34 @@
+
+DROP TABLE IF EXISTS stocks CASCADE;
+DROP TABLE IF EXISTS drugs CASCADE;
+DROP TABLE IF EXISTS pharmacies CASCADE;
+CREATE TABLE drugs(
+
+	id int PRIMARY KEY,
+	name varchar(255),
+	type varchar(255)
+
+);
+
+CREATE TABLE pharmacies(
+
+    id int PRIMARY KEY,
+    address varchar(255),
+    city varchar(255),
+    name varchar(255),
+    phone varchar(255)
+
+);
+
+CREATE TABLE stocks(
+
+    id int PRIMARY KEY,
+    quantity int,
+    drug_id int,
+    pharmacy_id int
+
+);
+
 INSERT INTO drugs values (1, 'Olaflur', 'COMPRIMATE');
 INSERT INTO drugs values (2, 'Clorhexidina', 'COMPRIMATE');
 INSERT INTO drugs values (3, 'Tiamina', 'SIROP');
