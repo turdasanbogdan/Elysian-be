@@ -1,10 +1,7 @@
 package turdasan.elysian.interview.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import turdasan.elysian.interview.entity.Pharmacy;
 import turdasan.elysian.interview.service.PharmaciesService;
 
@@ -42,6 +39,7 @@ public class PharmaciesRestController {
         return pharmacy;
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/city/{city}")
     public List<Pharmacy> findByCity(@PathVariable String city){
 
