@@ -94,8 +94,44 @@ Response example (JSON) :
 ]
 ```
 
+### How stocks are looking as a response:
 
-
+```json
+[
+    {
+        "id": 1,
+        "pharmacies": {
+            "id": 1,
+            "name": "Catena",
+            "address": "Strada Garii",
+            "city": "Bucuresti",
+            "phone": "0767778891"
+        },
+        "drugs": {
+            "id": 1,
+            "name": "Olaflur",
+            "type": "COMPRIMATE"
+        },
+        "quantity": 100
+    },
+    {
+        "id": 2,
+        "pharmacies": {
+            "id": 1,
+            "name": "Catena",
+            "address": "Strada Garii",
+            "city": "Bucuresti",
+            "phone": "0767778891"
+        },
+        "drugs": {
+            "id": 2,
+            "name": "Clorhexidina",
+            "type": "COMPRIMATE"
+        },
+        "quantity": 50
+    }
+]
+```
 
 
 
