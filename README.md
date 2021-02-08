@@ -1,4 +1,4 @@
-# Elysian-be
+# farma-be
 Backend for Elysian interview project.
 
 ## Start app
@@ -32,7 +32,7 @@ Maybe you will also need to clean-up your previous builds before running docker-
 
 ![Database schema](database.png)
 
-##Routes
+## Routes
 
 The main routes, used in frontend are:
 
